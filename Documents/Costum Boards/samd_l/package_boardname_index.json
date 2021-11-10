@@ -13,57 +13,11 @@
             "architecture": "saml",
             "version": "1.8.11",
             "category": "Contributed",
-            "url": "https://github.com/Jelle1212/SAMD_L/blob/main/samd_l.zip",
+            "url": "https://github.com/Jelle1212/SAMD_L/blob/master/samd_l.zip?raw=true",
             "archiveFileName": "samd_l.zip",
-            "checksum": "SHA-256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "checksum": "SHA-256:e59c73e2faac100433e20067940e13e279663b436c1a18bc3e1ff2d7303a7539",
             "size": "4879278",
             "boards": [
-              {
-                "name": "Arduino Zero (Programming Port)"
-                
-              },
-              {
-                "name": "Arduino Zero (Native USB Port)"
-              },
-              {
-                "name": "Arduino MKR1000"
-              },
-              {
-                "name": "Arduino MKRZERO"
-              },
-              {
-                "name": "Arduino MKR WiFi 1010"
-              },
-              {
-                "name": "Arduino NANO 33 IoT"
-              },
-              {
-                "name": "Arduino MKR FOX 1200"
-              },
-              {
-                "name": "Arduino MKR WAN 1300"
-              },
-              {
-                "name": "Arduino MKR WAN 1310"
-              },
-              {
-                "name": "Arduino MKR GSM 1400"
-              },
-              {
-                "name": "Arduino MKR NB 1500"
-              },
-              {
-                "name": "Arduino MKR Vidor 4000"
-              },
-              {
-                "name": "Adafruit Circuit Playground Express"
-              },
-              {
-                "name": "Arduino M0 Pro (Programming Port)"
-              },
-              {
-                "name": "Arduino M0 Pro (Native USB Port)"
-              },
               {
                 "name": "Arduino Zero Saml(Native USB Port)"
               }
