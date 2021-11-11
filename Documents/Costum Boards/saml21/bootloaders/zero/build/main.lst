@@ -1,0 +1,181 @@
+   1              		.cpu cortex-m0plus
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.section	.text.startup.main,"ax",%progbits
+  15              		.align	1
+  16              		.global	main
+  17              		.code	16
+  18              		.thumb_func
+  20              	main:
+  21 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  22 0002 314D     		ldr	r5, .L19
+  23 0004 314E     		ldr	r6, .L19+4
+  24 0006 2A68     		ldr	r2, [r5]
+  25 0008 0132     		add	r2, r2, #1
+  26 000a 1FD0     		beq	.L2
+  27 000c EBB2     		uxtb	r3, r5
+  28 000e 002B     		cmp	r3, #0
+  29 0010 1CD1     		bne	.L2
+  30 0012 2F4A     		ldr	r2, .L19+8
+  31 0014 2F4C     		ldr	r4, .L19+12
+  32 0016 1778     		ldrb	r7, [r2]
+  33 0018 0122     		mov	r2, #1
+  34 001a 1740     		and	r7, r2
+  35 001c 01D0     		beq	.L3
+  36 001e 2360     		str	r3, [r4]
+  37 0020 0AE0     		b	.L4
+  38              	.L3:
+  39 0022 2268     		ldr	r2, [r4]
+  40 0024 2C4B     		ldr	r3, .L19+16
+  41 0026 9A42     		cmp	r2, r3
+  42 0028 01D1     		bne	.L5
+  43 002a 2760     		str	r7, [r4]
+  44 002c 0EE0     		b	.L2
+  45              	.L5:
+  46 002e 2360     		str	r3, [r4]
+  47 0030 2A48     		ldr	r0, .L19+20
+  48 0032 FFF7FEFF 		bl	delayUs
+  49 0036 2760     		str	r7, [r4]
+  50              	.L4:
+  51 0038 234A     		ldr	r2, .L19
+  52 003a 1368     		ldr	r3, [r2]
+  53              	@ 190 "C:\Users\Jelle\AppData\Local/Arduino15/packages/arduino/tools/CMSIS/4.5.0/CMSIS/Include/cmsi
+  54 003c 83F30888 		MSR msp, r3
+  55              	
+  56              	@ 0 "" 2
+  57              		.code	16
+  58 0040 FF23     		mov	r3, #255
+  59 0042 9D43     		bic	r5, r3
+  60 0044 204B     		ldr	r3, .L19
+  61 0046 B560     		str	r5, [r6, #8]
+  62 0048 5B68     		ldr	r3, [r3, #4]
+  63              	@ 140 "main.c" 1
+  64 004a 1847     		bx r3
+  65              	@ 0 "" 2
+  66              		.code	16
+  67              	.L2:
+  68 004c FFF7FEFF 		bl	board_init
+  69              	@ 60 "C:\Users\Jelle\AppData\Local/Arduino15/packages/arduino/tools/CMSIS/4.5.0/CMSIS/Include/cmsis
+  70 0050 62B6     		cpsie i
+  71              	@ 0 "" 2
+  72              		.code	16
+  73 0052 234B     		ldr	r3, .L19+24
+  74 0054 8022     		mov	r2, #128
+  75 0056 9202     		lsl	r2, r2, #10
+  76 0058 9A60     		str	r2, [r3, #8]
+  77 005a 5A61     		str	r2, [r3, #20]
+  78 005c 214B     		ldr	r3, .L19+28
+  79 005e 224A     		ldr	r2, .L19+32
+  80 0060 0024     		mov	r4, #0
+  81 0062 5A60     		str	r2, [r3, #4]
+  82 0064 316A     		ldr	r1, [r6, #32]
+  83 0066 C022     		mov	r2, #192
+  84 0068 0902     		lsl	r1, r1, #8
+  85 006a 090A     		lsr	r1, r1, #8
+  86 006c 1206     		lsl	r2, r2, #24
+  87 006e 0A43     		orr	r2, r1
+  88 0070 3262     		str	r2, [r6, #32]
+  89 0072 0722     		mov	r2, #7
+  90 0074 9C60     		str	r4, [r3, #8]
+  91 0076 201C     		mov	r0, r4
+  92 0078 1A60     		str	r2, [r3]
+  93 007a 0621     		mov	r1, #6
+  94 007c 0222     		mov	r2, #2
+  95 007e FFF7FEFF 		bl	pinConfig
+  96 0082 201C     		mov	r0, r4
+  97 0084 0621     		mov	r1, #6
+  98 0086 221C     		mov	r2, r4
+  99 0088 FFF7FEFF 		bl	isPinActive
+ 100 008c A042     		cmp	r0, r4
+ 101 008e 16D1     		bne	.L6
+ 102              	.L11:
+ 103 0090 FFF7FEFF 		bl	usb_init
+ 104 0094 154B     		ldr	r3, .L19+36
+ 105 0096 0422     		mov	r2, #4
+ 106 0098 041C     		mov	r4, r0
+ 107 009a 1A70     		strb	r2, [r3]
+ 108              	.L9:
+ 109 009c A368     		ldr	r3, [r4, #8]
+ 110 009e 201C     		mov	r0, r4
+ 111 00a0 9847     		blx	r3
+ 112 00a2 134B     		ldr	r3, .L19+40
+ 113 00a4 0028     		cmp	r0, #0
+ 114 00a6 01D0     		beq	.L7
+ 115 00a8 0122     		mov	r2, #1
+ 116 00aa 1A70     		strb	r2, [r3]
+ 117              	.L7:
+ 118 00ac 1B78     		ldrb	r3, [r3]
+ 119 00ae 002B     		cmp	r3, #0
+ 120 00b0 F4D0     		beq	.L9
+ 121 00b2 0020     		mov	r0, #0
+ 122 00b4 FFF7FEFF 		bl	sam_ba_monitor_init
+ 123              	.L10:
+ 124 00b8 FFF7FEFF 		bl	sam_ba_monitor_run
+ 125 00bc FCE7     		b	.L10
+ 126              	.L6:
+ 127 00be 0120     		mov	r0, #1
+ 128 00c0 FFF7FEFF 		bl	sdBootloader
+ 129 00c4 E4E7     		b	.L11
+ 130              	.L20:
+ 131 00c6 C046     		.align	2
+ 132              	.L19:
+ 133 00c8 00000000 		.word	__sketch_vectors_ptr
+ 134 00cc 00ED00E0 		.word	-536810240
+ 135 00d0 00080040 		.word	1073743872
+ 136 00d4 FC7F0020 		.word	536903676
+ 137 00d8 35817307 		.word	125010229
+ 138 00dc 20A10700 		.word	500000
+ 139 00e0 00280040 		.word	1073752064
+ 140 00e4 10E000E0 		.word	-536813552
+ 141 00e8 BF030000 		.word	959
+ 142 00ec 00000000 		.word	ledDirection
+ 143 00f0 00000000 		.word	.LANCHOR0
+ 145              		.section	.text.SysTick_Handler,"ax",%progbits
+ 146              		.align	1
+ 147              		.global	SysTick_Handler
+ 148              		.code	16
+ 149              		.thumb_func
+ 151              	SysTick_Handler:
+ 152 0000 08B5     		push	{r3, lr}
+ 153 0002 FFF7FEFF 		bl	LED_pulse
+ 154              		@ sp needed
+ 155 0006 FFF7FEFF 		bl	sam_ba_monitor_sys_tick
+ 156 000a 08BD     		pop	{r3, pc}
+ 158              		.section	.bss.main_b_cdc_enable,"aw",%nobits
+ 159              		.set	.LANCHOR0,. + 0
+ 162              	main_b_cdc_enable:
+ 163 0000 00       		.space	1
+ 164              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.3 20140228 (release) [ARM/embedded-4_8-br
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:15     .text.startup.main:00000000 $t
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:20     .text.startup.main:00000000 main
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:133    .text.startup.main:000000c8 $d
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:146    .text.SysTick_Handler:00000000 $t
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:151    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:162    .bss.main_b_cdc_enable:00000000 main_b_cdc_enable
+C:\Users\Jelle\AppData\Local\Temp\cc44eWWB.s:163    .bss.main_b_cdc_enable:00000000 $d
+
+UNDEFINED SYMBOLS
+delayUs
+board_init
+pinConfig
+isPinActive
+usb_init
+sam_ba_monitor_init
+sam_ba_monitor_run
+sdBootloader
+__sketch_vectors_ptr
+ledDirection
+LED_pulse
+sam_ba_monitor_sys_tick

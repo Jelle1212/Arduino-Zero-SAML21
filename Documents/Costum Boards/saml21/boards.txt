@@ -1,0 +1,184 @@
+# Copyright (c) 2014-2017 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.cpu=Microcontroller
+menu.clock=Clock Source
+menu.usb=USB Config
+menu.serial=Serial Config
+menu.bootloader=Bootloader Size
+menu.timer=Timer PWM Frequency
+menu.float=Floating Point
+menu.config=Build Options
+
+
+# Core for Arduino Zero (Autodetect Port)
+arduino_zero.name=Arduino Zero (Autodetect Port)
+arduino_zero.bootloader.file=zero/binaries/sam_ba_arduino_zero_SAMD21G18A.hex
+arduino_zero.vid.0=0x2341
+arduino_zero.pid.0=0x804d
+arduino_zero.vid.1=0x2341
+arduino_zero.pid.1=0x004d
+# If the board is a 2341:824d use 2341:824d for build and set other parameters as well
+arduino_zero.vid.2=0x2341
+arduino_zero.pid.2=0x824d
+arduino_zero.vid.2.build.vid=0x2341
+arduino_zero.vid.2.build.pid=0x824d
+arduino_zero.vid.2.build.usb_product="Genuino Zero"
+arduino_zero.vid.2.bootloader.file=zero/binaries/sam_ba_arduino_zero_SAMD21G18A.hex
+# If the board is a 2341:024d use 2341:824d for build and set other parameters as well
+arduino_zero.vid.3=0x2341
+arduino_zero.pid.3=0x024d
+arduino_zero.vid.3.build.vid=0x2341
+arduino_zero.vid.3.build.pid=0x824d
+arduino_zero.vid.3.build.usb_product="Genuino Zero"
+arduino_zero.vid.3.bootloader.file=zero/binaries/sam_ba_arduino_zero_SAMD21G18A.hex
+# Programming port
+arduino_zero.vid.4=0x03eb
+arduino_zero.pid.4=0x2157
+arduino_zero.vid.4.upload.tool=arduino:openocd
+arduino_zero.vid.4.upload.use_1200bps_touch=false
+arduino_zero.vid.4.upload.wait_for_upload_port=false
+arduino_zero.vid.4.upload.native_usb=false
+arduino_zero.upload.tool=MattairTech_Arduino:bossac
+arduino_zero.upload.use_1200bps_touch=true
+arduino_zero.upload.wait_for_upload_port=true
+arduino_zero.upload.native_usb=true
+arduino_zero.build.mcu=cortex-m0plus
+arduino_zero.build.mathlib=arm_cortexM0l_math
+arduino_zero.build.f_cpu=48000000L
+arduino_zero.build.usb_product="Arduino Zero"
+arduino_zero.build.usb_manufacturer="Arduino LLC"
+arduino_zero.build.board=SAMD_ZERO
+arduino_zero.build.core=arduino
+arduino_zero.build.variant=arduino_zero
+arduino_zero.build.variant_system_lib=
+arduino_zero.build.vid=0x2341
+arduino_zero.build.pid=0x804d
+arduino_zero.upload.protocol=sam-ba
+arduino_zero.menu.float.default=Print & String use auto-promoted doubles only
+arduino_zero.menu.float.default.build.floatconfig=FLOAT_BOTH_DOUBLES_ONLY
+arduino_zero.menu.float.print=Print uses separate singles and doubles
+arduino_zero.menu.float.print.build.floatconfig=FLOAT_PRINT_SINGLES_DOUBLES
+arduino_zero.menu.float.string=String uses separate singles and doubles
+arduino_zero.menu.float.string.build.floatconfig=FLOAT_STRING_SINGLES_DOUBLES
+arduino_zero.menu.float.both=Print & String use separate singles and doubles
+arduino_zero.menu.float.both.build.floatconfig=FLOAT_BOTH_SINGLES_DOUBLES
+arduino_zero.menu.config.disabled=config.h disabled
+arduino_zero.menu.config.disabled.build.buildconfig=CONFIG_H_DISABLED
+arduino_zero.menu.config.enabled=config.h enabled (mostly code size reductions)
+arduino_zero.menu.config.enabled.build.buildconfig=CONFIG_H_ENABLED
+arduino_zero.menu.clock.crystal_32k=32KHZ_CRYSTAL
+arduino_zero.menu.clock.crystal_32k.build.clockconfig=CLOCKCONFIG_32768HZ_CRYSTAL
+arduino_zero.menu.clock.internal=INTERNAL_OSCILLATOR
+arduino_zero.menu.clock.internal.build.clockconfig=CLOCKCONFIG_INTERNAL
+arduino_zero.menu.clock.internal_usb=INTERNAL_USB_CALIBRATED_OSCILLATOR
+arduino_zero.menu.clock.internal_usb.build.clockconfig=CLOCKCONFIG_INTERNAL_USB
+arduino_zero.menu.timer.timer_732Hz=732.4Hz (16-bit)
+arduino_zero.menu.timer.timer_732Hz.build.timerconfig=TIMER_732Hz
+arduino_zero.menu.timer.timer_366Hz=366.2Hz (16-bit)
+arduino_zero.menu.timer.timer_366Hz.build.timerconfig=TIMER_366Hz
+arduino_zero.menu.timer.timer_244Hz=244.1Hz (16-bit)
+arduino_zero.menu.timer.timer_244Hz.build.timerconfig=TIMER_244Hz
+arduino_zero.menu.timer.timer_183Hz=183.1Hz (16-bit)
+arduino_zero.menu.timer.timer_183Hz.build.timerconfig=TIMER_183Hz
+arduino_zero.menu.timer.timer_146Hz=146.5Hz (16-bit)
+arduino_zero.menu.timer.timer_146Hz.build.timerconfig=TIMER_146Hz
+arduino_zero.menu.timer.timer_122Hz=122.1Hz (16-bit)
+arduino_zero.menu.timer.timer_122Hz.build.timerconfig=TIMER_122Hz
+arduino_zero.menu.timer.timer_105Hz=104.6Hz (16-bit)
+arduino_zero.menu.timer.timer_105Hz.build.timerconfig=TIMER_105Hz
+arduino_zero.menu.timer.timer_81Hz=81.38Hz (16-bit)
+arduino_zero.menu.timer.timer_81Hz.build.timerconfig=TIMER_81Hz
+arduino_zero.menu.timer.timer_61Hz=61.04Hz (16-bit)
+arduino_zero.menu.timer.timer_61Hz.build.timerconfig=TIMER_61Hz
+arduino_zero.menu.timer.timer_31Hz=30.52Hz (16-bit)
+arduino_zero.menu.timer.timer_31Hz.build.timerconfig=TIMER_31Hz
+arduino_zero.menu.timer.timer_187500Hz=187500Hz (8-bit)
+arduino_zero.menu.timer.timer_187500Hz.build.timerconfig=TIMER_187500Hz
+arduino_zero.menu.timer.timer_93750Hz=93750Hz (8-bit)
+arduino_zero.menu.timer.timer_93750Hz.build.timerconfig=TIMER_93750Hz
+arduino_zero.menu.timer.timer_62500Hz=62500Hz (8-bit)
+arduino_zero.menu.timer.timer_62500Hz.build.timerconfig=TIMER_62500Hz
+arduino_zero.menu.timer.timer_37500Hz=37500Hz (8-bit)
+arduino_zero.menu.timer.timer_37500Hz.build.timerconfig=TIMER_37500Hz
+arduino_zero.menu.timer.timer_20833Hz=20833Hz (8-bit)
+arduino_zero.menu.timer.timer_20833Hz.build.timerconfig=TIMER_20833Hz
+arduino_zero.menu.timer.timer_12500Hz=12500Hz (8-bit)
+arduino_zero.menu.timer.timer_12500Hz.build.timerconfig=TIMER_12500Hz
+arduino_zero.menu.timer.timer_7500Hz=7500Hz (8-bit)
+arduino_zero.menu.timer.timer_7500Hz.build.timerconfig=TIMER_7500Hz
+arduino_zero.menu.timer.timer_4166Hz=4166Hz (8-bit)
+arduino_zero.menu.timer.timer_4166Hz.build.timerconfig=TIMER_4166Hz
+arduino_zero.menu.timer.timer_2930Hz=2930Hz (8-bit)
+arduino_zero.menu.timer.timer_2930Hz.build.timerconfig=TIMER_2930Hz
+arduino_zero.menu.timer.timer_1465Hz=1465Hz (8-bit, 16-bit for D51)
+arduino_zero.menu.timer.timer_1465Hz.build.timerconfig=TIMER_1465Hz
+arduino_zero.bootloader.tool=arduino:openocd
+arduino_zero.build.extra_flags=-D__SAML21G18B__ {build.usb_flags} -DARM_MATH_CM0PLUS
+arduino_zero.build.ldscript=flash_256KB.ld
+arduino_zero.build.openocdscript=openocd_scripts/SAML21G18B.cfg
+arduino_zero.menu.bootloader.8kb=8KB_BOOTLOADER
+arduino_zero.menu.bootloader.8kb.build.bootloader_size=__8KB_BOOTLOADER__
+arduino_zero.menu.bootloader.8kb.build.ldscript_path=linker_scripts/gcc/8KB_Bootloader
+arduino_zero.menu.bootloader.8kb.upload.maximum_size=253952
+arduino_zero.menu.bootloader.16kb=16KB_BOOTLOADER
+arduino_zero.menu.bootloader.16kb.build.bootloader_size=__16KB_BOOTLOADER__
+arduino_zero.menu.bootloader.16kb.build.ldscript_path=linker_scripts/gcc/16KB_Bootloader
+arduino_zero.menu.bootloader.16kb.upload.maximum_size=245760
+arduino_zero.menu.bootloader.0kb=NO_BOOTLOADER
+arduino_zero.menu.bootloader.0kb.build.bootloader_size=__NO_BOOTLOADER__
+arduino_zero.menu.bootloader.0kb.build.ldscript_path=linker_scripts/gcc/No_Bootloader
+arduino_zero.menu.bootloader.0kb.upload.tool=arduino:openocd
+arduino_zero.menu.bootloader.0kb.upload.use_1200bps_touch=false
+arduino_zero.menu.bootloader.0kb.upload.wait_for_upload_port=false
+arduino_zero.menu.bootloader.0kb.upload.native_usb=false
+arduino_zero.menu.bootloader.0kb.upload.maximum_size=262144
+arduino_zero.menu.serial.one_uart=ONE_UART_ONE_WIRE_ONE_SPI
+arduino_zero.menu.serial.one_uart.build.serialcom_uart=ONE_UART
+arduino_zero.menu.serial.one_uart.build.serialcom_wire=ONE_WIRE
+arduino_zero.menu.serial.one_uart.build.serialcom_spi=ONE_SPI
+arduino_zero.menu.serial.one_uart_two_wire_two_spi=ONE_UART_TWO_WIRE_TWO_SPI
+arduino_zero.menu.serial.one_uart_two_wire_two_spi.build.serialcom_uart=ONE_UART
+arduino_zero.menu.serial.one_uart_two_wire_two_spi.build.serialcom_wire=TWO_WIRE
+arduino_zero.menu.serial.one_uart_two_wire_two_spi.build.serialcom_spi=TWO_SPI
+arduino_zero.menu.serial.two_uart=TWO_UART_ONE_WIRE_ONE_SPI
+arduino_zero.menu.serial.two_uart.build.serialcom_uart=TWO_UART
+arduino_zero.menu.serial.two_uart.build.serialcom_wire=ONE_WIRE
+arduino_zero.menu.serial.two_uart.build.serialcom_spi=ONE_SPI
+arduino_zero.menu.serial.two_uart_two_wire_two_spi=TWO_UART_TWO_WIRE_TWO_SPI
+arduino_zero.menu.serial.two_uart_two_wire_two_spi.build.serialcom_uart=TWO_UART
+arduino_zero.menu.serial.two_uart_two_wire_two_spi.build.serialcom_wire=TWO_WIRE
+arduino_zero.menu.serial.two_uart_two_wire_two_spi.build.serialcom_spi=TWO_SPI
+arduino_zero.menu.serial.no_uart=NO_UART_ONE_WIRE_ONE_SPI
+arduino_zero.menu.serial.no_uart.build.serialcom_uart=NO_UART
+arduino_zero.menu.serial.no_uart.build.serialcom_wire=ONE_WIRE
+arduino_zero.menu.serial.no_uart.build.serialcom_spi=ONE_SPI
+arduino_zero.menu.serial.no_uart_two_wire_two_spi=NO_UART_TWO_WIRE_TWO_SPI
+arduino_zero.menu.serial.no_uart_two_wire_two_spi.build.serialcom_uart=NO_UART
+arduino_zero.menu.serial.no_uart_two_wire_two_spi.build.serialcom_wire=TWO_WIRE
+arduino_zero.menu.serial.no_uart_two_wire_two_spi.build.serialcom_spi=TWO_SPI
+arduino_zero.menu.usb.cdc=CDC_ONLY
+arduino_zero.menu.usb.cdc.build.usbcom=CDC_ONLY
+arduino_zero.menu.usb.cdc_hid=CDC_HID
+arduino_zero.menu.usb.cdc_hid.build.usbcom=CDC_HID
+arduino_zero.menu.usb.withcdc=WITH_CDC
+arduino_zero.menu.usb.withcdc.build.usbcom=WITH_CDC
+arduino_zero.menu.usb.hid=HID_ONLY
+arduino_zero.menu.usb.hid.build.usbcom=HID_ONLY
+arduino_zero.menu.usb.nocdc=WITHOUT_CDC
+arduino_zero.menu.usb.nocdc.build.usbcom=WITHOUT_CDC
+arduino_zero.menu.usb.none=USB_DISABLED
+arduino_zero.menu.usb.none.build.usbcom=USB_DISABLED
