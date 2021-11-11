@@ -13,10 +13,10 @@
           "architecture": "saml",
           "version": "1.6.18",
           "category": "Contributed",
-          "url": "https://github.com/robotics-masters/mm1-hat-arduino/raw/master/custom_board/RoboHat-0.0.12.zip",
-          "archiveFileName": "RoboHat-0.0.12.zip",
-          "checksum": "SHA-256:e6a4c0b37a90a922777556d3af04c0396d9fc7fc47dfa5220f3d3da2410a3bf1",
-          "size": "2381077",
+          "url": "https://github.com/Jelle1212/Arduino-Zero-SAML21/blob/91b4e49f89ca2a07c2f01c678dfe9848062821a9/Documents/Costum%20Boards/saml21/saml21.zip",
+          "archiveFileName": "saml21.zip",
+          "checksum": "SHA-256:63d1ff8f936289dfdf33cec9a0715168df1a2e08cc4403fec17417b223654145",
+          "size": "1169270",
           "boards": [
             {
               "name": "Arduino Zero (Autodetect Port)"
