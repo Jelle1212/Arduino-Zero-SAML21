@@ -13,7 +13,7 @@
           "architecture": "saml",
           "version": "1.6.18",
           "category": "Contributed",
-          "url": "https://github.com/Jelle1212/Arduino-Zero-SAML21/blob/main/saml21.zip",
+          "url": "https://github.com/Jelle1212/Arduino-Zero-SAML21/blob/8ca6f65c5084a86640d1a3e393870c5c1618f5e9/saml21.zip",
           "archiveFileName": "saml21.zip",
           "checksum": "SHA-256:63d1ff8f936289dfdf33cec9a0715168df1a2e08cc4403fec17417b223654145",
           "size": "1171456 ",
